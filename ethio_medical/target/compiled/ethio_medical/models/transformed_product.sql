@@ -1,5 +1,5 @@
 -- models/transformed_product_images.sql
-{{ config(materialized='table') }}
+
 
 WITH source_data AS (
     SELECT
@@ -7,7 +7,7 @@ WITH source_data AS (
         product_name,
         date,
         price_in_birr  -- Rename the column to be clearer
-    FROM {{ source('medical_data', 'transformed_medical_product') }}
+    FROM "telegram"."public"."transformed_medical_product"
 )
 
 SELECT   -- Ensure unique channel usernames

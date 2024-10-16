@@ -1,8 +1,8 @@
-{{ config(materialized='table') }}
+
 
 WITH source_data AS (
     SELECT * 
-    FROM {{ source('medical_data', 'ethio_medical') }}
+    FROM "telegram"."public"."ethio_medical"
 ),
 phone_extracted AS (
     SELECT

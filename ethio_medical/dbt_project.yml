@@ -2,7 +2,7 @@ name: ethio_medical
 version: 1.0.0
 config-version: 2
 
-profile: ethio_medical_profile  # This should match the profile name in profiles.yml
+profile: ethio_medical  # This should match the profile name in profiles.yml
 
 # Optional: Define where your models are stored
 model-paths: ["models"]

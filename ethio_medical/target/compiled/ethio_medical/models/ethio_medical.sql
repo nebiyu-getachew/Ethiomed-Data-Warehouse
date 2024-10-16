@@ -1,9 +1,9 @@
 -- models/ethio_medical.sql
-{{ config(materialized='table') }}  -- Correcting the materialization syntax
+  -- Correcting the materialization syntax
 
 WITH source_data AS (
     SELECT * 
-    FROM {{ source('medical_data', 'ethio_medical') }}  -- Use DBT's source function
+    FROM "telegram"."public"."ethio_medical"  -- Use DBT's source function
 )
 
 SELECT

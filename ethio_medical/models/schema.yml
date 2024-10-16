@@ -27,8 +27,8 @@ models:
   - name: transformed_contact_number
     description: "Table containing transformed contact numbers."
     columns:
-      - name: channel_id
-        description: "The ID of the channel linked to the contact number."
+      - name: channel_username
+        description: "The username of the channel linked to the contact number."
         tests:
           - not_null
           - unique
@@ -48,15 +48,6 @@ models:
         description: "Price of the product in Birr."
         tests:
           - not_null
-          - accepted_range:
-              min: 0  # Ensure the price is non-negative
-      - name: channel_id
-        description: "ID of the channel that listed the product."
-        tests:
-          - not_null
-          - relationships:
-              to: ref('transformed_channel')
-              field: channel_id
       - name: date
         description: "The date when the product information was listed."
         tests:

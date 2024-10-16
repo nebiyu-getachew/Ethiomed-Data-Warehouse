@@ -1,8 +1,18 @@
-{{ config(materialized='table') }}
+
+  
+    
+
+  create  table "telegram"."public"."transformed_medical_product__dbt_tmp"
+  
+  
+    as
+  
+  (
+    
 
 WITH source_data AS (
     SELECT * 
-    FROM {{ source('medical_data', 'ethio_medical') }}
+    FROM "telegram"."public"."ethio_medical"
 ),
 phone_extracted AS (
     SELECT
@@ -58,3 +68,5 @@ AND rn = 1  -- Select only the first occurrence of each message_id
 AND TRIM(matches[1]) <> ''  -- Drop empty product names
 AND TRIM(matches[1]) <> TRIM(matches[2])  -- Drop rows where product name and price are the same
 ORDER BY message_id  -- Optional: order by message_id
+  );
+  
