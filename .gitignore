@@ -1,3 +1,12 @@
 .env/
 data/
 logs/
+__pycache__/
+*.pyc
+.DS_Store
+data.zip
+README.pdf
+*.log
+.cometml-runs/
+yolov5/
+medical-products-1/
