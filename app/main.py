@@ -6,13 +6,13 @@ from fastapi.templating import Jinja2Templates
 from sqlalchemy.orm import Session
 from pydantic import BaseModel
 from typing import List, Optional
-from app.database import get_db  # Adjusted import
-from app.crud import get_product_by_name  # Ensure this function is correctly imported
-from app.schemas import ProductBase, ProductResponse
+from database import get_db  # Adjusted import
+from crud import get_product_by_name  # Ensure this function is correctly imported
+from schemas import ProductBase, ProductResponse
 app = FastAPI()
 
 # Mount static files directory
-app.mount("/static", StaticFiles(directory="app/static"), name="static")
+app.mount("/static", StaticFiles(directory="../app/static"), name="static")
 
 # Set up templates and static files
 templates = Jinja2Templates(directory="app/templates")
